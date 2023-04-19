@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import CoworkingsList from "./pages/CoworkingsList";
 
 function App() {
+  // j'ai installé le react router
+  // et j'ai créé deux routes (donc deux pages)
+  // une pour la page d'accueil qui affiche le composant Home
+  // une pour la page coworkings qui affiche le composant CoworkingsList
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/coworkings" element={<CoworkingsList />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
