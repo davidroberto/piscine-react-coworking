@@ -34,10 +34,10 @@ const CoworkingsList = () => {
             <h2>{coworking.name}</h2>
             <p>Address : </p>
             <ul>
-              <li>{coworking.address.city}</li>
+              {/* <li>{coworking.address.city}</li>
               <li>{coworking.address.number}</li>
               <li>{coworking.address.street}</li>
-              <li>{coworking.address.postCode}</li>
+              <li>{coworking.address.postCode}</li> */}
             </ul>
             <p>Superficie : {coworking.superficy}</p>
           </div>

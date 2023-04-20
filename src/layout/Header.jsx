@@ -12,6 +12,9 @@ const Header = () => {
           <li>
             <Link to="/coworkings">Coworkings</Link>
           </li>
+          <li>
+            <Link to="/create-coworking">Créer un coworking</Link>
+          </li>
         </ul>
       </nav>
     </header>
