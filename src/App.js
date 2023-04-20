@@ -13,8 +13,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/coworkings" element={<CoworkingsList />} />
-        <Route path="/create-coworking" element={<CreateCoworking />} />
+        <Route path="/admin/coworkings" element={<CoworkingsList />} />
+        <Route path="/admin/create-coworking" element={<CreateCoworking />} />
       </Routes>
     </BrowserRouter>
   );
