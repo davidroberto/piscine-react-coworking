@@ -60,6 +60,7 @@ const CoworkingsList = () => {
               et je lui passe en parametre l'id du coworking actuel
             */}
             <Link to={`/admin/coworkings/${coworking.id}`}>Voir le coworking</Link>
+            <Link to={`/admin/coworkings/${coworking.id}/update`}>modifier le coworking</Link>
 
             {/* 
                créé un bouton avec un event listener

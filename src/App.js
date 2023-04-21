@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import CoworkingsList from "./pages/CoworkingsList";
 import CreateCoworking from "./pages/CreateCoworking";
 import CoworkingDetails from "./pages/CoworkingDetails";
+import UpdateCoworking from "./pages/UpdateCoworking";
 
 function App() {
   // j'ai installé le react router
@@ -14,9 +15,14 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+
+        <Route path="/coworkings" element={<CoworkingsList />} />
+        <Route path="/coworkings/:id" element={<CoworkingDetails />} />
+
         <Route path="/admin/coworkings" element={<CoworkingsList />} />
         <Route path="/admin/create-coworking" element={<CreateCoworking />} />
         <Route path="/admin/coworkings/:id" element={<CoworkingDetails />} />
+        <Route path="/admin/coworkings/:id/update" element={<UpdateCoworking />} />
       </Routes>
     </BrowserRouter>
   );
