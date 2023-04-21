@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import CoworkingsList from "./pages/CoworkingsList";
 import CreateCoworking from "./pages/CreateCoworking";
+import CoworkingDetails from "./pages/CoworkingDetails";
 
 function App() {
   // j'ai installé le react router
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/admin/coworkings" element={<CoworkingsList />} />
         <Route path="/admin/create-coworking" element={<CreateCoworking />} />
+        <Route path="/admin/coworkings/:id" element={<CoworkingDetails />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Header from "../layout/Header";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const CoworkingsList = () => {
   // créé un state coworkingsData pour pouvoir stocker les données récupérées
@@ -52,18 +52,20 @@ const CoworkingsList = () => {
         return (
           <div key={coworking.id}>
             <h2>{coworking.name}</h2>
-            <p>Address : </p>
-            <ul>
-              {/* <li>{coworking.address.city}</li>
-              <li>{coworking.address.number}</li>
-              <li>{coworking.address.street}</li>
-              <li>{coworking.address.postCode}</li> */}
-            </ul>
             <p>Superficie : {coworking.superficy}</p>
+
+            {/* 
+              Je créé un lien (grâce au react router)
+              vers la page de détail du coworking
+              et je lui passe en parametre l'id du coworking actuel
+            */}
+            <Link to={`/admin/coworkings/${coworking.id}`}>Voir le coworking</Link>
+
             {/* 
                créé un bouton avec un event listener
                passe le coworking actuel en paramètre de la fonction handleDeleteClick
               */}
+
             <button onClick={() => handleDeleteClick(coworking)}>Supprimer le coworking</button>
           </div>
         );
