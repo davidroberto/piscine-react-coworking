@@ -1,6 +1,19 @@
+import { useNavigate } from "react-router-dom";
 import Header from "../layout/Header";
+import { useEffect } from "react";
 
 const CreateCoworking = () => {
+  const navigate = useNavigate();
+  // si l'utilisateur n'est pas connecté
+  // donc qu'il n'a pas de jwt dans le localStorage
+  // on le redirige vers la page de connexion
+
+  useEffect(() => {
+    if (!localStorage.getItem("jwt")) {
+      navigate("/login");
+    }
+  }, [navigate]);
+
   // je créé un event listener quand le formulaire est validé
   const handleSubmit = (event) => {
     // j'utilise l'objet event, fourni automatiquement par le navigateur

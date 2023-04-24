@@ -4,6 +4,7 @@ import CoworkingsList from "./pages/CoworkingsList";
 import CreateCoworking from "./pages/CreateCoworking";
 import CoworkingDetails from "./pages/CoworkingDetails";
 import UpdateCoworking from "./pages/UpdateCoworking";
+import Login from "./pages/Login";
 
 function App() {
   // j'ai installé le react router
@@ -18,6 +19,11 @@ function App() {
 
         <Route path="/coworkings" element={<CoworkingsList />} />
         <Route path="/coworkings/:id" element={<CoworkingDetails />} />
+
+        {/* 
+          je créé une page (route) avec le formulaire de connexion
+         */}
+        <Route path="/login" element={<Login />} />
 
         <Route path="/admin/coworkings" element={<CoworkingsList />} />
         <Route path="/admin/create-coworking" element={<CreateCoworking />} />

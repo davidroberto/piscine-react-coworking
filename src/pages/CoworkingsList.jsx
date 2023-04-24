@@ -16,19 +16,30 @@ const CoworkingsList = () => {
   // et qui renvoie un json contenant la liste des coworkings en BDD
   // quand l'appel est terminé, je stocke les données récupérées
   // dans le state, ce qui force mon composant à se recharger
+
   useEffect(() => {
     fetch("http://localhost:3002/api/coworkings")
-      .then((coworkingsDataJson) => coworkingsDataJson.json())
+      .then((coworkingsDataJson) => {
+        return coworkingsDataJson.json();
+      })
       .then((coworkingsDataJs) => {
         setCoworkingsData(coworkingsDataJs.data);
       });
   }, []);
 
   const handleDeleteClick = (coworking) => {
+    const token = localStorage.getItem("jwt");
+
     // je fais un appel fetch vers l'url de mon api avec la méthode DELETE
     // et je passe l'id du coworking à supprimer en paramètre de l'url
     fetch("http://localhost:3002/api/coworkings/" + coworking.id, {
       method: "DELETE",
+      // si l'url de mon api nécessite une authentification
+      // je lui passe le JWT stocké en localStorage dans le header
+      // de la requête
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     })
       // quand le fetch est terminé, je recharge la page actuelle grâce
       // à la fonction navigate du react router
